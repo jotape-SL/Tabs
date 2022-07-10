@@ -24,7 +24,33 @@ function App() {
       </section>
     );
   }
-  return <h2>tabs project setup</h2>;
+
+  const { company, dates, duties, title } = jobs[value];
+  return (
+    <seciton className='section'>
+      <div className='title'>
+        <h2>Expierence</h2>
+        <div className='underline'></div>
+      </div>
+      <div className='jobs-center'>
+        {/* btn conteiner */}
+        {/* job info */}
+        <article className='job-info'>
+          <h3>{title}</h3>
+          <h4>{company}</h4>
+          <p className='job-date'>{dates}</p>
+          {duties.map((duty, i) => {
+            return (
+              <div key={i} className='job-desc'>
+                <FaAngleDoubleRight className='job-icon' />
+                <p>{duty}</p>
+              </div>
+            );
+          })}
+        </article>
+      </div>
+    </seciton>
+  );
 }
 
 export default App;
